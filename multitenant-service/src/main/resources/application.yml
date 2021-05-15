@@ -1,0 +1,42 @@
+server:
+  port: 8081
+spring:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: none
+    open-in-view: false
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-tenant.yaml
+multitenancy:
+  datasource-cache:
+    maximumSize: 100
+    expireAfterAccess: 10
+  master:
+    repository:
+      packages: io.vaibhavshukla.multitenantservice.multitenant.repository
+    entityManager:
+      packages: io.vaibhavshukla.multitenantservice.multitenant.entity
+    datasource:
+      url: jdbc:postgresql://localhost:5432/shop
+      username: postgres
+      password: vaibhavs
+    liquibase:
+      enabled: false
+  tenant:
+    repository:
+      packages:  io.vaibhavshukla.multitenantservice.repository
+    entityManager:
+      packages: io.vaibhavshukla.multitenantservice.entity
+    datasource:
+      hikari:
+        maximumPoolSize: 2
+        minimumIdle: 0
+        idleTimeout: 30000
+    liquibase:
+      changeLog: classpath:db/changelog/db.changelog-tenant.yaml
+encryption:
+  secret: vaibhavshukla
+  salt: bangalore

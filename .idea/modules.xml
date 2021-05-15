@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/multi-tenant-mnagement-service/multi-tenant-mnagement-service.iml" filepath="$PROJECT_DIR$/multi-tenant-mnagement-service/multi-tenant-mnagement-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/multitenacy-sample.iml" filepath="$PROJECT_DIR$/.idea/multitenacy-sample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/multitenant-service/multitenant-service.iml" filepath="$PROJECT_DIR$/multitenant-service/multitenant-service.iml" />
+    </modules>
+  </component>
+</project>
